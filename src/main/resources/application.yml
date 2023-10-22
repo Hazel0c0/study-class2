@@ -1,0 +1,27 @@
+# Spring Boot Application Configuration
+server:
+  port: 8080
+
+spring:
+  application:
+    name: YourAppName
+
+# DataSource Configuration for MariaDB
+  datasource:
+    url: jdbc:mariadb://localhost:3306/spring_boot_study
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: 1234
+
+# JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: update # You can use create, update, or none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDB103Dialect
+
+# Logging Configuration
+logging.level:
+  org.hibernate.SQL: debug
